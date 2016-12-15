@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <!-- Servlets -->
+  
+  		<servlet>
+                <servlet-name>GetMessageServlet</servlet-name>
+                <servlet-class>it.polimi.dima.roarify.server.GetMessageServlet</servlet-class>
+        </servlet>
+                <servlet-mapping>
+                <servlet-name>GetMessageServlet</servlet-name>
+                <url-pattern>/getMessage</url-pattern>
+        </servlet-mapping>
+        
+        
+        <servlet>
+                <servlet-name>PostMessageServlet</servlet-name>
+                <servlet-class>it.polimi.dima.roarify.server.PostMessageServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+                <servlet-name>PostMessageServlet</servlet-name>
+                <url-pattern>/postMessage</url-pattern>
+        </servlet-mapping>
+        
+                <servlet>
+                <servlet-name>GetNearMessagesServlet</servlet-name>
+                <servlet-class>it.polimi.dima.roarify.server.GetNearMessagesServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+                <servlet-name>GetNearMessagesServlet</servlet-name>
+                <url-pattern>/getNearMessages</url-pattern>
+        </servlet-mapping>
+        
+        
+        <servlet>
+                <servlet-name>DeleteMessageServlet</servlet-name>
+                <servlet-class>it.polimi.dima.roarify.server.DeleteMessageServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+                <servlet-name>DeleteMessageServlet</servlet-name>
+                <url-pattern>/deleteMessage</url-pattern>
+        </servlet-mapping>
+        
+        
+        <servlet>
+                <servlet-name>MainServlet</servlet-name>
+                <servlet-class>it.polimi.dima.roarify.server.MainServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+                <servlet-name>MainServlet</servlet-name>
+                <url-pattern>/roarifyApp</url-pattern>
+        </servlet-mapping>
+        
+        <servlet>
+                <servlet-name>GetUserMessagesServlet</servlet-name>
+                <servlet-class>it.polimi.dima.roarify.server.GetUserMessagesServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+                <servlet-name>GetUserMessagesServlet</servlet-name>
+                <url-pattern>/getUserMessages</url-pattern>
+        </servlet-mapping>
+        
+        <servlet>
+                <servlet-name>UpdateMessageServlet</servlet-name>
+                <servlet-class>it.polimi.dima.roarify.server.UpdateMessageServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+                <servlet-name>UpdateMessageServlet</servlet-name>
+                <url-pattern>/updateMessage</url-pattern>
+        </servlet-mapping>
+        
+        <servlet>
+                <servlet-name>LoginServlet</servlet-name>
+                <servlet-class>it.polimi.dima.roarify.server.LoginServlet</servlet-class>
+        </servlet>
+                <servlet-mapping>
+                <servlet-name>LoginServlet</servlet-name>
+                <url-pattern>/login</url-pattern>
+        </servlet-mapping>
+        
+        <servlet>
+                <servlet-name>ShowMessagesServlet</servlet-name>
+                <servlet-class>it.polimi.dima.roarify.server.ShowMessagesServlet</servlet-class>
+        </servlet>
+                <servlet-mapping>
+                <servlet-name>ShowMessagesServlet</servlet-name>
+                <url-pattern>/showMessages</url-pattern>
+        </servlet-mapping>
+        
+        
+        <servlet>
+                <servlet-name>ShowUsersServlet</servlet-name>
+                <servlet-class>it.polimi.dima.roarify.server.ShowUsersServlet</servlet-class>
+        </servlet>
+         <servlet-mapping>
+                <servlet-name>ShowUsersServlet</servlet-name>
+                <url-pattern>/showUsers</url-pattern>
+        </servlet-mapping>
+        
+        
+          <welcome-file-list>
+                <welcome-file>Login.jsp</welcome-file>
+        </welcome-file-list>  
+
+
+</web-app>

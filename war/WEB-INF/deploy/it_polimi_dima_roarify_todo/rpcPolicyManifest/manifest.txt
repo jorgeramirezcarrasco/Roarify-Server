@@ -1,0 +1,3 @@
+# Module it_polimi_dima_roarify_todo
+# RPC service class, partial path of RPC policy file
+it.polimi.dima.roarify.todo.client.GreetingService, 5E0B50BCB6CCD2526F4C43A0415DD7D8.gwt.rpc

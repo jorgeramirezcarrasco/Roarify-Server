@@ -1,0 +1,2 @@
+serviceClass: it.polimi.dima.roarify.todo.client.GreetingService
+path: 5E0B50BCB6CCD2526F4C43A0415DD7D8.gwt.rpc
