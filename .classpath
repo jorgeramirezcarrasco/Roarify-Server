@@ -9,6 +9,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/jorgeramirezcarrasco/eclipse/jee-neon/gson-2.2.2.jar"/>
+	<classpathentry kind="lib" path="/Users/jorgeramirezcarrasco/Documents/workspace/it.polimi.dima.roarify.server/war/WEB-INF/lib/gson-2.2.2.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
