@@ -34,11 +34,13 @@
 	<table>
 		<thead>
 			<tr>
-				
+				<th>MessageID</th>
 				<th>UserID</th>
-				<th>Title</th>
+				<th>UserName</th>
 				<th>Text</th>
-				<th>Location</th>
+				<th>Lat</th>
+				<th>Long</th>
+				<th>Time</th>
 			</tr>
 		</thead>
 			
@@ -48,10 +50,13 @@
 			
 				<tr class = "alt">
 					
-					<td><c:out value="${message.userId}" /></td>
-					<td><c:out value="${message.title}"/></td>
+					<td><c:out value="${message.id}" /></td>
+					<td><c:out value="${message.userId}"/></td>
+					<td><c:out value="${message.userName}" /></td>
 					<td><c:out value="${message.text}" /></td>
-					<td><c:out value="${message.lat}"/><c:out value=","/><c:out value="${message.lon}"/></td>
+					<td><c:out value="${message.lat}"/></td>
+					<td><c:out value="${message.lon}"/></td>
+					<td><c:out value="${message.time}"/></td>
 				</tr>
 			</c:forEach>
 			

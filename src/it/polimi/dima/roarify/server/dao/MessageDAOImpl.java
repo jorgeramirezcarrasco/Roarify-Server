@@ -26,10 +26,10 @@ public class MessageDAOImpl implements MessageDAO {
 	}
 
 	@Override
-	public void add(String title, String text, Double lat, Double lon, String userId) {
+	public void add(String text,String userId, String userName,Double lat, Double lon,String time) {
 		synchronized(this){
 			EntityManager em = EMFService.get().createEntityManager();
-			Message message = new Message(title, text, lat, lon, userId);
+			Message message = new Message(text,userId,userName,lat,lon,time);
 			em.persist(message);
 			em.close();
 		}
@@ -93,15 +93,15 @@ public class MessageDAOImpl implements MessageDAO {
 	}
 
 	@Override
-	public void editMessage(long id, String title, String text) {
+	public void editMessage(long id, String text,String time) {
 		EntityManager em = EMFService.get().createEntityManager();
 
 		EntityTransaction tx = em.getTransaction();
 		try {
 		        tx.begin();
 		        Message message = em.find(Message.class, id);
-		        message.setTitle(title);
 		        message.setText(text);
+		        message.setTime(time);
 		        em.persist(message);
 		        tx.commit();
 		} finally {

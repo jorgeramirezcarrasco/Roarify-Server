@@ -24,7 +24,6 @@ private static final long serialVersionUID = 1L;
 
 		Double lat = Double.parseDouble(req.getParameter("lat"));
 		Double lon = Double.parseDouble(req.getParameter("long"));
-		String userId = req.getParameter("userId");
 		
 		Double lonSup = lon+1;
 		Double lonInf = lon-1;

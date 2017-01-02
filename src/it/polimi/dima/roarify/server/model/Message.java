@@ -16,27 +16,26 @@ public class Message implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String title;
 	private String text;
 	private Double lat;
 	private Double lon;
 	private String userId;
+	private String userName;
+	private String time;
 	
-	public Message(String title, String text, Double lat, Double lon,  String userId){
+	public Message(String text, String userId, String userName,Double lat, Double lon, String time){
 		
-		this.title = title; 
 		this.text = text;
 		this.lat = lat;
 		this.lon = lon;
 		this.userId = userId;
+		this.userName = userName;
+		this.time = time;
 		
 	}
 	
 	public Long getId(){
 		return id;
-	}
-	public String getTitle(){
-		return title;
 	}
 	public String getText(){
 		return text;		
@@ -47,8 +46,11 @@ public class Message implements Serializable {
 	public Double getLat(){
 		return lat;
 	}
-	public void setTitle(String title){
-		this.title = title;
+	public String getUserName(){
+		return userName;
+	}
+	public String getTime(){
+		return time;
 	}
 	public void setText(String text){
 		this.text= text;
@@ -64,5 +66,11 @@ public class Message implements Serializable {
 	}
 	public void setUserId(String userId){
 		this.userId= userId;
+	}
+	public void setUserName(String userName){
+		this.userName= userName;
+	}
+	public void setTime(String time){
+		this.time=time;
 	}
 }

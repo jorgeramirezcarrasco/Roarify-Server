@@ -16,14 +16,16 @@ public class PostMessageServlet extends HttpServlet {
 	public void doPost (HttpServletRequest req, HttpServletResponse resp) throws IOException{ // Uploads the content of a Post-It
 		
 				
-		String title = checkNull(req.getParameter("title")); // Checks if the parameters are or not empty.
+		 // Checks if the parameters are or not empty.
 		String text = checkNull(req.getParameter ("text"));
+		String userId  = checkNull(req.getParameter("userId"));
+		String userName  = checkNull(req.getParameter("userName"));
 		String lat = checkNull(req.getParameter("lat"));
 		String lon  = checkNull(req.getParameter("long"));
-		String userId  = checkNull(req.getParameter("userId"));
+		String time = checkNull(req.getParameter("time"));
 		
 		MessageDAO dao = MessageDAOImpl.getInstance();
-		dao.add(title,text,Double.parseDouble(lat),Double.parseDouble(lon),userId);
+		dao.add(text,userId,userName,Double.parseDouble(lat),Double.parseDouble(lon),time);
 		
 		
 	}
