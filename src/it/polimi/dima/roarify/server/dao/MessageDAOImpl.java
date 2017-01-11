@@ -68,7 +68,7 @@ public class MessageDAOImpl implements MessageDAO {
 		Double latInf = lat-1;
 	
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em.createQuery("select n from Message n where n.lat >= :latInf AND n.lat <= :latSup AND n.isParent='true'");
+		Query q = em.createQuery("select n from Message n where n.lat >= :latInf AND n.lat <= :latSup");
 		q.setParameter("latSup", latSup);
 		q.setParameter("latInf", latInf);
 		List<Message> messages= q.getResultList();
@@ -80,10 +80,12 @@ public class MessageDAOImpl implements MessageDAO {
 	}
 
 	@Override
-	public List<Message> getChildrenMessages(long id){		
+	public List<Message> getChildrenMessages(String id){	
+		String falseValue = "false";
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em.createQuery("select n from Message n where n.parentId = :parentId AND n.isParent='false'");
+		Query q = em.createQuery("select n from Message n where n.parentId = :parentId AND n.isParent= :false");
 		q.setParameter("parentId", id);
+		q.setParameter("false", falseValue);
 		List<Message> messages= q.getResultList();
 		if(messages == null){
 			messages = new ArrayList<Message>();

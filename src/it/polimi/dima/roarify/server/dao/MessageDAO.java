@@ -11,7 +11,7 @@ public interface MessageDAO {
 	public void remove(long id);
 	public Message getById(long id);
 	public List<Message> getNearMessages(Double lat, Double lon);
-	public List<Message> getChildrenMessages(long id);
+	public List<Message> getChildrenMessages(String id);
 	public List<Message> getUserMessages(String userId);
 	public void editMessage(long id, String text, String time);
 	public List<Message> listMessages();

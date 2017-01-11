@@ -35,7 +35,16 @@
                 <url-pattern>/getNearMessages</url-pattern>
         </servlet-mapping>
         
+          		<servlet>
+                <servlet-name>GetChildrenMessagesServlet</servlet-name>
+                <servlet-class>it.polimi.dima.roarify.server.GetChildrenMessagesServlet</servlet-class>
+        </servlet>
+                <servlet-mapping>
+                <servlet-name>GetChildrenMessagesServlet</servlet-name>
+                <url-pattern>/getChildrenMessages</url-pattern>
+        </servlet-mapping>
         
+                
         <servlet>
                 <servlet-name>DeleteMessageServlet</servlet-name>
                 <servlet-class>it.polimi.dima.roarify.server.DeleteMessageServlet</servlet-class>
