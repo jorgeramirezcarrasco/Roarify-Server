@@ -41,6 +41,8 @@
 				<th>Lat</th>
 				<th>Long</th>
 				<th>Time</th>
+				<th>isParent</th>
+				<th>ParentId</th>
 			</tr>
 		</thead>
 			
@@ -57,6 +59,8 @@
 					<td><c:out value="${message.lat}"/></td>
 					<td><c:out value="${message.lon}"/></td>
 					<td><c:out value="${message.time}"/></td>
+					<td><c:out value="${message.isParent}"/></td>
+					<td><c:out value="${message.parentId}"/></td>
 				</tr>
 			</c:forEach>
 			

@@ -22,8 +22,10 @@ public class Message implements Serializable {
 	private String userId;
 	private String userName;
 	private String time;
+	private String isParent;
+	private String parentId;
 	
-	public Message(String text, String userId, String userName,Double lat, Double lon, String time){
+	public Message(String text, String userId, String userName,Double lat, Double lon, String time, String isParent, String parentId){
 		
 		this.text = text;
 		this.lat = lat;
@@ -31,6 +33,8 @@ public class Message implements Serializable {
 		this.userId = userId;
 		this.userName = userName;
 		this.time = time;
+		this.isParent = isParent;
+		this.parentId = parentId;
 		
 	}
 	
@@ -48,9 +52,6 @@ public class Message implements Serializable {
 	}
 	public String getUserName(){
 		return userName;
-	}
-	public String getTime(){
-		return time;
 	}
 	public void setText(String text){
 		this.text= text;
@@ -72,5 +73,20 @@ public class Message implements Serializable {
 	}
 	public void setTime(String time){
 		this.time=time;
+	}
+	public String getTime(){
+		return time;
+	}
+	public void setIsParent(String isParent){
+		this.isParent=isParent;
+	}
+	public String getIsParent(){
+		return isParent;
+	}
+	public void setParentId(String parentId){
+		this.parentId=parentId;
+	}
+	public String getParentId(){
+		return parentId;
 	}
 }

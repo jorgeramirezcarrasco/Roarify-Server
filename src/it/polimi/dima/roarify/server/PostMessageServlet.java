@@ -23,9 +23,11 @@ public class PostMessageServlet extends HttpServlet {
 		String lat = checkNull(req.getParameter("lat"));
 		String lon  = checkNull(req.getParameter("long"));
 		String time = checkNull(req.getParameter("time"));
+		String isParent  = checkNull(req.getParameter("isParent"));
+		String parentId = checkNull(req.getParameter("parentId"));
 		
 		MessageDAO dao = MessageDAOImpl.getInstance();
-		dao.add(text,userId,userName,Double.parseDouble(lat),Double.parseDouble(lon),time);
+		dao.add(text,userId,userName,Double.parseDouble(lat),Double.parseDouble(lon),time,isParent,parentId);
 		
 		
 	}

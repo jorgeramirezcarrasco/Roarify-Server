@@ -26,10 +26,10 @@ public class MessageDAOImpl implements MessageDAO {
 	}
 
 	@Override
-	public void add(String text,String userId, String userName,Double lat, Double lon,String time) {
+	public void add(String text,String userId, String userName,Double lat, Double lon,String time,String isParent,String parentId) {
 		synchronized(this){
 			EntityManager em = EMFService.get().createEntityManager();
-			Message message = new Message(text,userId,userName,lat,lon,time);
+			Message message = new Message(text,userId,userName,lat,lon,time,isParent,parentId);
 			em.persist(message);
 			em.close();
 		}
@@ -68,7 +68,7 @@ public class MessageDAOImpl implements MessageDAO {
 		Double latInf = lat-1;
 	
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em.createQuery("select n from Message n where n.lat >= :latInf AND n.lat <= :latSup");
+		Query q = em.createQuery("select n from Message n where n.lat >= :latInf AND n.lat <= :latSup AND n.isParent='true'");
 		q.setParameter("latSup", latSup);
 		q.setParameter("latInf", latInf);
 		List<Message> messages= q.getResultList();
@@ -79,6 +79,17 @@ public class MessageDAOImpl implements MessageDAO {
 		return messages;
 	}
 
+	@Override
+	public List<Message> getChildrenMessages(long id){		
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em.createQuery("select n from Message n where n.parentId = :parentId AND n.isParent='false'");
+		q.setParameter("parentId", id);
+		List<Message> messages= q.getResultList();
+		if(messages == null){
+			messages = new ArrayList<Message>();
+		}
+		return messages;
+	}
 	@Override
 	public List<Message> getUserMessages(String userId) {
 		EntityManager em = EMFService.get().createEntityManager();
@@ -118,12 +129,12 @@ public class MessageDAOImpl implements MessageDAO {
 		
 		Query q = em.createQuery("select n from Message n");
 	
-		List<Message> notes= q.getResultList();
-		if(notes == null){
-			notes = new ArrayList<Message>();
+		List<Message> messages= q.getResultList();
+		if(messages == null){
+			messages = new ArrayList<Message>();
 		}
 		
-		return notes;
+		return messages;
 	}
 
 	@Override
