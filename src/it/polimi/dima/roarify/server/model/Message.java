@@ -14,7 +14,7 @@ public class Message implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long messageId;
 
 	private String text;
 	private Double lat;
@@ -39,7 +39,7 @@ public class Message implements Serializable {
 	}
 	
 	public Long getId(){
-		return id;
+		return messageId;
 	}
 	public String getText(){
 		return text;		
