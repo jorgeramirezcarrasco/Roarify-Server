@@ -25,8 +25,8 @@ private static final long serialVersionUID = 1L;
 		Double lat = Double.parseDouble(req.getParameter("lat"));
 		Double lon = Double.parseDouble(req.getParameter("long"));
 		
-		Double lonSup = lon+1;
-		Double lonInf = lon-1;
+		//Double lonSup = lon+1;
+		//Double lonInf = lon-1;
 		
 		MessageDAO dao = MessageDAOImpl.getInstance();
 		
@@ -35,10 +35,10 @@ private static final long serialVersionUID = 1L;
 
 		
 		for(int i=0;i<messages.size();i++){
-			if(messages.get(i).getLon()<=lonSup &&messages.get(i).getLon()>=lonInf ){
+			//if(messages.get(i).getLon()<=lonSup &&messages.get(i).getLon()>=lonInf ){
 				if(messages.get(i).getIsParent().equals("true")){
 					filterMessages.add(messages.get(i));
-						}
+						//}
 					}
 				}
 

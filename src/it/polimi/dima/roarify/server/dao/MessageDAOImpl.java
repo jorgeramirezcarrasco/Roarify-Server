@@ -64,13 +64,14 @@ public class MessageDAOImpl implements MessageDAO {
 
 	@Override
 	public List<Message> getNearMessages(Double lat, Double lon) {
-		Double latSup = lat+1;
-		Double latInf = lat-1;
+		//Double latSup = lat+1;
+		//Double latInf = lat-1;
 	
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em.createQuery("select n from Message n where n.lat >= :latInf AND n.lat <= :latSup");
-		q.setParameter("latSup", latSup);
-		q.setParameter("latInf", latInf);
+		//Query q = em.createQuery("select n from Message n where n.lat >= :latInf AND n.lat <= :latSup");
+		Query q = em.createQuery("select n from Message n");
+		//q.setParameter("latSup", latSup);
+		//q.setParameter("latInf", latInf);
 		List<Message> messages= q.getResultList();
 		if(messages == null){
 			messages = new ArrayList<Message>();
